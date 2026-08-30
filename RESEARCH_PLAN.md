@@ -1,23 +1,22 @@
-# Research Plan: Objective Hearing Screening from Auditory-Evoked Pupillary Responses (AEPR) Using Computer Vision
+# Research Plan: Deep Learning for Auditory Listening Effort Estimation from Pupillary Responses
 
-## 1. Critical Evaluation of the Research Question
-**The premise:** Using computer vision to measure pupillary responses for objective hearing screening.
+## 1. The Core Research Question
+**"Can pupillary dynamics provide robust representations of auditory listening effort across subjects and acoustic conditions?"**
 
-**The Skeptical View:** While pupillometry is a well-established physiological measure, using it as a direct replacement for pure-tone audiometry (detecting hearing thresholds) is scientifically tenuous.
-*   **Why it's weak:** The pupillary response to sound is primarily driven by arousal, novelty (the orienting reflex), and cognitive load (listening effort), not the sheer mechanical ability to hear a sound. A lack of pupillary response does not definitively mean deafness; it could mean habituation, fatigue, or lack of attention. Conversely, a response might be triggered by non-auditory stimuli in a poorly controlled environment.
-*   **The pivot:** Instead of "Hearing Threshold Screening," frame the project around **"Assessing Auditory-Cognitive Load"** or **"Screening for Hidden Hearing Loss / Auditory Processing Difficulties."** Pupillometry is the gold standard for measuring the *listening effort* required to understand speech in noise. This is clinically highly relevant, as standard audiograms fail to capture why some patients with "normal" hearing struggle in noisy environments.
+This project pivots entirely away from "Objective Hearing Screening" or attempting to diagnose clinical hearing loss. Pupillary responses (Auditory-Evoked Pupillary Responses, or AEPR) reflect arousal, novelty, and cognitive load (listening effort), not raw sensory thresholds. Without clinical ground truth, diagnosing hearing loss from public data is scientifically indefensible.
 
-## 2. Physiological Signal Preprocessing Recommendations
-Pupillometry data is notoriously noisy. If working with 1D extracted signals, the following pipeline is mandatory for publishable research:
-1.  **Blink Detection and Removal:** Blinks cause artificial drops to 0. Use velocity-based algorithms to detect blink onset and offset.
-2.  **Interpolation:** Linearly or cubically interpolate missing data during blinks.
-3.  **Filtering:** Apply a low-pass filter (e.g., Butterworth, cutoff ~4-10 Hz) to remove high-frequency camera noise, and a high-pass filter to remove slow baseline drift.
-4.  **Baseline Correction:** This is critical. Subtract or divide the pupil size by a baseline window (e.g., 1 second before the sound stimulus). AEPRs are tiny (~0.1mm to 0.5mm changes), so relative change from baseline is the only reliable metric.
+Instead, this project focuses on **Auditory Listening Effort Estimation**. This is a highly relevant, mathematically rigorous problem that explores how the brain expends cognitive resources to process sound.
 
-## 3. Computer Vision Viability
-Most clinical pupillometry uses expensive, controlled infrared (IR) eyetrackers.
-*   **The CV Challenge:** Standard RGB webcams struggle with low light (where pupils are larger and easier to measure), motion blur, and lack of contrast between dark irises and the pupil.
-*   **The Opportunity:** Developing a robust, low-cost CV pipeline that can extract a reliable 1D pupil signal from a standard webcam, compensating for head movement and ambient light, is a major engineering contribution.
+## 2. The Research Progression
+The project will follow a logical progression, proving understanding at each step before adding complexity:
+1.  **Auditory stimulus** → 2. **Pupil response** → 3. **Signal processing** → 4. **Listening / auditory condition** → 5. **ML model** → 6. **Robustness & Explainability**.
 
-## 4. Overall Assessment for a PhD / RA Portfolio
-This is a highly interdisciplinary and complex project. If executed well, it demonstrates skills in physiological signal processing, computer vision, time-series machine learning, and experimental design. To succeed, you must abandon the naive assumption that `pupil dilation == hearing ability` and embrace the complex neuroscience of the Locus Coeruleus-Norepinephrine (LC-NE) arousal system.
+## 3. The "No Data Collection" Philosophy
+A common misconception is that a strong RA/PhD portfolio requires collecting your own data. In reality, demonstrating the ability to take public, disparate datasets and design a rigorous, cross-dataset evaluation framework is scientifically more defensible and impressive than collecting a small, biased sample of 20 friends in an uncontrolled environment. 
+
+The core contribution of this project is **methodology, rigorous experimental design, and reproducibility**, not data ownership.
+
+## 4. Key Methodological Constraints (What NOT to do)
+*   **No Random Train/Test Splitting:** Randomly splitting time-series windows across the dataset leads to massive subject-level leakage. All models will use strict **Leave-One-Subject-Out (LOSO)** or grouped k-fold cross-validation by subject identity.
+*   **No "Hearing Loss" Classification:** Labels will be strictly derived from the dataset's actual experimental conditions (e.g., auditory stimulus condition, stimulus intensity, or listening condition).
+*   **No Over-engineering:** The architecture will evolve from simple (Logistic Regression) to complex (Temporal Transformers), proving the necessity of complexity at each step.
