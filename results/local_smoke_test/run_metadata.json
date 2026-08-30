@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-08-30T09:53:51Z",
+  "git_commit_hash": "e0b194a1d819c3c05bf709274172a52e04a3c7bd",
+  "random_seed": 42,
+  "config": {
+    "mode": "smoke_test",
+    "in_channels": 2,
+    "seq_len": 128,
+    "num_classes": 2,
+    "batch_size": 1,
+    "learning_rate": 0.001
+  },
+  "environment": {
+    "python_version": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "torch_version": "2.13.0+cpu",
+    "numpy_version": "2.5.2",
+    "pandas_version": "3.0.5",
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_device_name": "CPU",
+    "cuda_version": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "rajucode/aepr-training-runner",
+  "title": "AEPR Training Runner",
+  "code_file": "runner_notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "machine_shape": "nvidiaTeslaT4",
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "rajucode/aepr-pupillometry-dataset"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

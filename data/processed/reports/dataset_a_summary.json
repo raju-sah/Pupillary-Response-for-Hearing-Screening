@@ -1,0 +1,63 @@
+{
+  "dataset_name": "Dataset A: APURE Audio Stimulation (Zenodo 10497437)",
+  "total_samples": 1307969,
+  "num_subjects": 20,
+  "subject_ids": [
+    "sub-10F",
+    "sub-10M",
+    "sub-1F",
+    "sub-1M",
+    "sub-2F",
+    "sub-2M",
+    "sub-3F",
+    "sub-3M",
+    "sub-4F",
+    "sub-4M",
+    "sub-5F",
+    "sub-5M",
+    "sub-6F",
+    "sub-6M",
+    "sub-7F",
+    "sub-7M",
+    "sub-8F",
+    "sub-8M",
+    "sub-9F",
+    "sub-9M"
+  ],
+  "num_recordings": 40,
+  "num_trials": 63,
+  "sampling_rate": {
+    "median_hz": 83.33333333333017,
+    "min_hz": 62.50000000003464,
+    "max_hz": 249.9999999988063
+  },
+  "available_columns": [
+    "subject_id",
+    "recording_id",
+    "trial_id",
+    "timestamp",
+    "pupil_left",
+    "pupil_right",
+    "stimulus",
+    "condition"
+  ],
+  "missingness_percentage": {
+    "subject_id": 0.0,
+    "recording_id": 0.0,
+    "trial_id": 0.0,
+    "timestamp": 0.0,
+    "pupil_left": 40.23352235412307,
+    "pupil_right": 40.97405978276243,
+    "stimulus": 0.0,
+    "condition": 0.0
+  },
+  "stimulus_distribution": {
+    "none": 1229334,
+    "pure_tone": 78635
+  },
+  "condition_distribution": {
+    "audio_stimulation": 654691,
+    "resting_baseline": 653278
+  },
+  "num_files_parsed": 40
+}
