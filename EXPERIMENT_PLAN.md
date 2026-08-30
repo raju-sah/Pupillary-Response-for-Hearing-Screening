@@ -1,37 +1,58 @@
 # Experiment Plan
 
-This plan outlines a sequence of rigorous experiments, starting from basic physiological validation and scaling up to cross-dataset deep learning and multimodal AI.
+This sequence of experiments is strictly bound by the actual targets available in the audited public datasets.
 
-## Experiment 1: Physiological Baseline
-*   **Dataset:** Dataset A (16 subjects).
-*   **Goal:** Prove understanding of the physiological signal before applying machine learning.
-*   **Method:** Extract classical physiological features: baseline pupil diameter, peak dilation, dilation amplitude, latency to peak, recovery time, area under the response curve, and normalized pupil response.
-*   **Analysis:** Statistically investigate whether the auditory stimulation produces a measurable Pupillary Dilation Response (PDR).
-
-## Experiment 2: Machine Learning (Classical vs. Deep Learning)
+## Experiment 1: Physiological Characterization
+*   **Research Question:** Does auditory stimulation produce a statistically significant pupillary dilation response (PDR) independent of lighting conditions?
 *   **Dataset:** Dataset A.
-*   **Target Label:** Auditory stimulus condition or intensity (NOT hearing loss).
-*   **Method:** Compare performance across a spectrum of complexity:
-    *   *Classical ML:* Logistic Regression, SVM, Random Forest, XGBoost.
-    *   *Deep Learning:* 1D CNN, LSTM, GRU, Temporal Transformer.
-*   **Evaluation:** Strict Subject-Independent Cross-Validation. Report Macro-F1, AUROC, PR-AUC, Sensitivity, and Specificity.
+*   **Variables:** IV: Auditory tone presence. DV: Pupil diameter.
+*   **Target:** N/A (Statistical extraction).
+*   **Statistical Tests:** Paired t-tests on Peak Pupil Dilation (PPD); cluster-based permutation testing on the time-series.
+*   **Limitations:** High variance across subjects; luminance changes may mask the cognitive response.
 
-## Experiment 3: Cross-Dataset Generalization (Domain Shift)
-*   **Datasets:** Train on Dataset A (16-subject), Test on Dataset B (66-subject PsPM-AOB).
-*   **Goal:** Answer the research question: *How well do pupillary-response models generalize across datasets, experimental protocols, and populations?*
-*   **Analysis:** Measure the performance drop when applying the Dataset A model to Dataset B. Analyze the domain shift.
+## Experiment 2: Classical ML vs Deep Temporal Models
+*   **Research Question:** Do deep temporal models outperform classical ML in detecting auditory-evoked responses?
+*   **Dataset:** Dataset A.
+*   **Target:** Stimulus Present vs. Baseline Window.
+*   **Validation Strategy:** Leave-One-Subject-Out (LOSO) CV.
+*   **Models:** 
+    *   *Baseline:* Logistic Regression, SVM (using handcrafted PPD features).
+    *   *Deep:* 1D-CNN, LSTM, Temporal Transformer.
+*   **Metrics:** Macro-F1, AUROC, PR-AUC.
+*   **Leakage Prevention:** Strict LOSO CV; baseline correction applied per-epoch before train/test split.
 
-## Experiment 4: Age Generalization
-*   **Dataset:** Dataset C (OpenNeuro ds003690 - 75 subjects).
-*   **Goal:** Answer the research question: *Does pupil-based auditory-response modeling generalize across age groups?*
-*   **Method:** Train models on the young adult cohort (N=36) and test on the older adult cohort (N=39) using only the pupil signal.
+## Experiment 3: Subject-Independent Generalization
+*   **Research Question:** Can temporal models accurately classify auditory deviance across unseen subjects?
+*   **Dataset:** Dataset B (66 subjects).
+*   **Target:** Deviant Tone vs Standard Tone.
+*   **Validation Strategy:** LOSO CV.
+*   **Models:** LSTM, Temporal Transformer.
 
-## Experiment 5: Multimodal Extension (Optional)
+## Experiment 4: Cross-Dataset/Domain-Shift Evaluation
+*   **Research Question:** How significantly does model performance degrade when trained on passive tone listening and tested on an auditory oddball paradigm?
+*   **Datasets:** Train on Dataset A, Test on Dataset B.
+*   **Target:** Tone Present (from A) / Deviant Present (from B) vs Baseline.
+*   **Metrics:** Performance drop (AUROC diff) between internal validation and external testing.
+*   **Limitations:** The cognitive tasks differ (passive vs oddball), which may naturally limit generalizability.
+
+## Experiment 5: Age-Related Generalization
+*   **Research Question:** Do pupillary response representations learned from young adults generalize to older adults?
 *   **Dataset:** Dataset C.
-*   **Goal:** Investigate if combining physiological signals improves cognitive state estimation.
-*   **Method:** Fuse the Pupil, EEG, and ECG signals into a multimodal deep learning architecture.
+*   **Target:** Task Type (Rest vs Go/NoGo).
+*   **Validation Strategy:** Train on Young Adult cohort (N=36), Test on Older Adult cohort (N=39).
+*   **Metrics:** Macro-F1, AUROC.
+*   **Limitations:** Older adults have smaller baseline pupils and slower reactivity (senile miosis), likely causing a severe domain shift.
 
-## Experiment 6: Computer Vision Validation (Optional)
+## Experiment 6: Computer-Vision Pupil Extraction
+*   **Research Question:** Can an open-source CV pipeline match the accuracy of the provided 1D pupil signal?
 *   **Dataset:** Dataset A (IR Video).
-*   **Goal:** Benchmark an open-source or custom CV pupil extraction pipeline against the dataset's provided ground-truth signal.
-*   **Metrics:** Pearson correlation, SNR, and MAE between the CV-extracted signal and the provided signal.
+*   **Target:** 1D Pupil Diameter.
+*   **Models:** MediaPipe Iris / OpenFace.
+*   **Metrics:** Pearson correlation, MAE between CV output and provided ground-truth signal.
+*   **Limitations:** Subject to video quality and blink occlusion.
+
+## Experiment 7: Optional Multimodal Analysis
+*   **Research Question:** Does combining EEG, ECG, and Pupillometry improve auditory cognitive state classification?
+*   **Dataset:** Dataset C.
+*   **Target:** Task Type (Rest vs Go/NoGo).
+*   **Models:** Multimodal Fusion Transformer.

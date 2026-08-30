@@ -1,29 +1,29 @@
 # Dataset Plan
 
-This project will rely entirely on publicly available datasets, avoiding the significant cost, time, and infrastructure required to collect high-quality physiological data. 
+This project relies exclusively on public datasets. No new human participant data will be collected.
 
-## 1. The Core Datasets
+## 1. Dataset A: "Pupil Data Upon Stimulation by Auditory Stimuli"
+*   **DOI:** 10.5281/zenodo.10497437
+*   **Subjects:** 16
+*   **Task:** Passive listening to 60-100 pure audible tones under varying lighting conditions.
+*   **Data Available:** 1D pupil size, shape, and raw ~60 FPS IR eye video.
+*   **Role in Project:** Serves as the foundation for physiological baseline verification, initial ML model training (Target: Tone vs Baseline), and the Computer Vision benchmark experiment.
 
-### Dataset A: "Pupil Data Upon Stimulation by Auditory Stimuli" (Zenodo)
-*   **Participants:** 16 subjects.
-*   **Details:** Auditory tones under different lighting conditions.
-*   **Crucial Feature:** This dataset provides both pre-extracted 1D pupil measurements AND the original ~60 FPS IR eye-camera recordings.
-*   **Role:** This is the foundational dataset. It allows for dual-track research: 
-    *   *Track A:* Physiological time-series research on the 1D signal.
-    *   *Track B:* Computer vision research benchmarking CV pipelines against the provided ground-truth IR video.
+## 2. Dataset B: PsPM-AOB
+*   **DOI:** 10.5281/zenodo.3608706
+*   **Subjects:** 66
+*   **Task:** Auditory Oddball Task (440 Hz standard tones, 660 Hz deviant tones).
+*   **Data Available:** 1D pupil size.
+*   **Role in Project:** Serves as the external validation dataset for cross-domain generalization (Dataset A to B) and subject-independent modeling for auditory deviance (Target: Standard vs Deviant).
 
-### Dataset B: PsPM-AOB
-*   **Participants:** 66 subjects.
-*   **Details:** Pupillometry collected during auditory oddball tasks (440/660 Hz tones).
-*   **Role:** The external validation dataset. Models trained on Dataset A will be evaluated on Dataset B to test cross-dataset generalization.
+## 3. Dataset C: OpenNeuro ds003690
+*   **DOI:** 10.18112/openneuro.ds003690.v1.0.0
+*   **Subjects:** 75 (36 young adults, 39 older adults)
+*   **Task:** Rest, Simple Reaction Time (RT), and Go/NoGo tasks.
+*   **Data Available:** 1D pupil size (240 Hz), EEG, ECG.
+*   **Role in Project:** Facilitates age-related generalization experiments (Target: Young vs Older) and the optional multimodal extension (Pupil + EEG + ECG).
 
-### Dataset C: OpenNeuro ds003690
-*   **Participants:** 75 subjects (36 young adults, 39 older adults).
-*   **Details:** Synchronized EEG, ECG, and pupillography (240 Hz) during auditory reaction-time tasks and passive listening.
-*   **Role:** Allows for age-generalization experiments (testing if models trained on young adults work on older adults) and multimodal extensions (combining Pupil + EEG).
-
-## 2. The Computer Vision Strategy
-Because Dataset A includes raw IR video, we do not need to abandon the Computer Vision aspect of the project. However, the CV aspect is reframed as a **Reproducibility/Benchmarking experiment**.
-
-We will build a CV pipeline (Pupil detection → Diameter estimation → Temporal smoothing) and compare our extracted signal against the provided ground-truth pupil signal. 
-*   **Metrics for CV Validation:** Mean Absolute Error (MAE), RMSE, Pearson correlation, and Temporal alignment.
+## 4. Limitations
+*   Lack of speech-in-noise tasks prevents direct estimation of standard audiological "listening effort".
+*   Dataset A contains varying luminance, which introduces a massive confounder (Pupillary Light Reflex) that models must learn to ignore.
+*   Dataset C includes artifacts from the physical constraints of the EEG forehead rest.
