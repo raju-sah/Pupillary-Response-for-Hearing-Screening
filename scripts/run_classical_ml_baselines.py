@@ -143,7 +143,7 @@ def run_all_classical_ml_benchmarks():
             groups=groups_b,
             n_splits=5,
             random_state=42,
-            n_bootstraps=1000
+            n_bootstraps=500
         )
         elapsed = time.time() - t0
         results_task1[name] = res
@@ -169,7 +169,7 @@ def run_all_classical_ml_benchmarks():
             groups=groups_a,
             n_splits=5,
             random_state=42,
-            n_bootstraps=1000
+            n_bootstraps=500
         )
         elapsed = time.time() - t0
         results_task2[name] = res
@@ -355,10 +355,14 @@ def run_all_classical_ml_benchmarks():
     indices = np.argsort(importances)[::-1]
 
     fig, ax = plt.subplots(figsize=(10.0, 7.5), dpi=300)
+    feat_names_top = [FEATURE_NAMES_25[i] for i in indices[:15]]
+    feat_imp_top = [importances[i] for i in indices[:15]]
     sns.barplot(
-        x=[importances[i] for i in indices[:15]],
-        y=[FEATURE_NAMES_25[i] for i in indices[:15]],
+        x=feat_imp_top,
+        y=feat_names_top,
+        hue=feat_names_top,
         palette="viridis",
+        legend=False,
         ax=ax
     )
     ax.set_xlabel("Gini Feature Importance (Mean Decrease in Impurity)", fontsize=12, fontweight="bold")
@@ -372,10 +376,11 @@ def run_all_classical_ml_benchmarks():
 
     # Figure 5: Feature Ablation Comparison
     fig, ax = plt.subplots(figsize=(8.5, 5.5), dpi=300)
-    ablation_df = pd.DataFrame([
-        {"Subset": k, "Model": "Logistic Regression", "ROC-AUC": v["lr_roc_auc"]},
-        {"Subset": k, "Model": "Random Forest", "ROC-AUC": v["rf_roc_auc"]},
-    ] for k, v in ablation1_results.items())
+    ablation_records = []
+    for k, v in ablation1_results.items():
+        ablation_records.append({"Subset": k, "Model": "Logistic Regression", "ROC-AUC": v["lr_roc_auc"]})
+        ablation_records.append({"Subset": k, "Model": "Random Forest", "ROC-AUC": v["rf_roc_auc"]})
+    ablation_df = pd.DataFrame(ablation_records)
     sns.barplot(data=ablation_df, x="Subset", y="ROC-AUC", hue="Model", palette=["#2b5c8f", "#d95f02"], ax=ax)
     ax.set_ylim([0.45, 0.85])
     ax.axhline(0.50, color="gray", linestyle="--", label="Chance (0.50)")

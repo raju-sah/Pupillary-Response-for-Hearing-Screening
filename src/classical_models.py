@@ -307,7 +307,7 @@ def get_classical_model_suite(
         ]),
         "RBF SVM": Pipeline([
             ("scaler", StandardScaler()),
-            ("clf", SVC(kernel="rbf", C=1.0, probability=True, class_weight="balanced", random_state=random_state))
+            ("clf", SVC(kernel="rbf", C=1.0, probability=True, class_weight="balanced", random_state=random_state, cache_size=1000))
         ]),
         "Random Forest": RandomForestClassifier(
             n_estimators=100,
