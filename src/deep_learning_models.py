@@ -10,7 +10,7 @@ Implements modular PyTorch architectures for multi-channel pupillometry time ser
 6. Dataset & Tensor Extractors.
 """
 
-from typing import Dict, Any, List, Optional, Tuple, Sequence
+from typing import Dict, Any, List, Optional, Tuple, Sequence, Union
 import math
 import numpy as np
 import torch
