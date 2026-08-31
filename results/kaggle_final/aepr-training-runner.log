@@ -1,0 +1,292 @@
+[{"stream_name":"stderr","time":5.899795109,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.899842636,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":6.657023534,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.657054887,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.65706016,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.657063841,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.258251684,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.258284926,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.258307915,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.258316228,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":14.790546045,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":14.790584357,"data":"ENVIRONMENT \u0026 HARDWARE DIAGNOSTICS\n"}
+,{"stream_name":"stdout","time":14.790590488,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":14.790594269,"data":"Python Version:       3.12.13\n"}
+,{"stream_name":"stdout","time":14.790598192000001,"data":"PyTorch Version:      2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":14.790602073,"data":"NumPy Version:        2.0.2\n"}
+,{"stream_name":"stdout","time":14.790623119,"data":"Pandas Version:       2.3.3\n"}
+,{"stream_name":"stdout","time":14.790626573,"data":"SciPy Version:        1.16.3\n"}
+,{"stream_name":"stdout","time":14.790630141,"data":"Scikit-Learn Version: 1.6.1\n"}
+,{"stream_name":"stdout","time":14.790633512,"data":"\n"}
+,{"stream_name":"stdout","time":14.790636715,"data":"CUDA Available:       True\n"}
+,{"stream_name":"stdout","time":14.790640785,"data":"GPU Device Name:      Tesla P100-PCIE-16GB\n"}
+,{"stream_name":"stdout","time":14.790644294,"data":"GPU Device Count:     1\n"}
+,{"stream_name":"stdout","time":14.790648164,"data":"GPU Total Memory:     15.89 GB\n"}
+,{"stream_name":"stdout","time":14.790651944,"data":"CUDA Version:         12.8\n"}
+,{"stream_name":"stdout","time":14.790655518,"data":"============================================================\n"}
+,{"stream_name":"stderr","time":14.791908684,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":14.791935366,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":14.791940163,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":14.791959665,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":14.79196568,"data":"    \n"}
+,{"stream_name":"stderr","time":14.791969783,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":14.791973782,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":14.791993953,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":14.791997633,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":14.792000921,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":14.792004922,"data":"    \n"}
+,{"stream_name":"stderr","time":14.792008346,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":14.792011598,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":14.792022795,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":14.792026394,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":14.792029759,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":14.792033551,"data":"\n"}
+,{"stream_name":"stderr","time":14.792036642,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":14.792039889,"data":"\n"}
+,{"stream_name":"stderr","time":14.792043278,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":14.792047019,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":14.792051088000001,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":14.792054553,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":14.792057794,"data":"    \n"}
+,{"stream_name":"stderr","time":14.792060969,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":14.792064684,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":14.792068246,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":14.792071301,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":14.792074737,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":14.792078156,"data":"    \n"}
+,{"stream_name":"stderr","time":14.79208143,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":14.792084581,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":14.792087885,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":14.792091292,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":14.79209484,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":14.792098924,"data":"\n"}
+,{"stream_name":"stderr","time":14.792102847,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":14.872877119,"data":"Mounted datasets in /kaggle/input:\n"}
+,{"stream_name":"stdout","time":14.872913294,"data":"  - aepr-pupillometry-dataset (109 files)\n"}
+,{"stream_name":"stdout","time":14.987697091,"data":"Successfully loaded local modules into /kaggle/working.\n"}
+,{"stream_name":"stderr","time":14.988458309,"data":"/tmp/ipykernel_23/1722880312.py:12: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.\n"}
+,{"stream_name":"stderr","time":14.988479013,"data":"  tar.extractall(path='/kaggle/working')\n"}
+,{"stream_name":"stderr","time":14.988484581,"data":"\n"}
+,{"stream_name":"stderr","time":14.988488705,"data":"/tmp/ipykernel_23/1722880312.py:12: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.\n"}
+,{"stream_name":"stderr","time":14.988493433,"data":"  tar.extractall(path='/kaggle/working')\n"}
+,{"stream_name":"stderr","time":15.162270177,"data":"/kaggle/working/scripts/run_deep_learning_benchmarks.py:429: SyntaxWarning: invalid escape sequence '\\%'\n"}
+,{"stream_name":"stderr","time":15.162298104,"data":"  # DL models\n"}
+,{"stream_name":"stderr","time":15.162302797,"data":"\n"}
+,{"stream_name":"stderr","time":15.162306342,"data":"/kaggle/working/scripts/run_deep_learning_benchmarks.py:429: SyntaxWarning: invalid escape sequence '\\%'\n"}
+,{"stream_name":"stderr","time":15.162310029,"data":"  # DL models\n"}
+,{"stream_name":"stdout","time":16.810579332,"data":"Notice: CUDA available but sm architecture fallback to CPU: CUDA error: no kernel image is available for execution on the device\n"}
+,{"stream_name":"stdout","time":16.810618699,"data":"Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\n"}
+,{"stream_name":"stdout","time":16.810625515,"data":"CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\n"}
+,{"stream_name":"stdout","time":16.810631024,"data":"For debugging consider passing CUDA_LAUNCH_BLOCKING=1\n"}
+,{"stream_name":"stdout","time":16.810636381,"data":"Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"}
+,{"stream_name":"stdout","time":16.810640721,"data":"\n"}
+,{"stream_name":"stdout","time":16.810645022,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":16.810650241,"data":"STARTING STEP 7: DEEP LEARNING BENCHMARKS (Device: cpu)\n"}
+,{"stream_name":"stdout","time":16.810654781,"data":"Data directory:   /kaggle/input/aepr-pupillometry-dataset\n"}
+,{"stream_name":"stdout","time":16.810659675,"data":"Output directory: /kaggle/working\n"}
+,{"stream_name":"stdout","time":16.810664146,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":16.810669096,"data":"\n"}
+,{"stream_name":"stdout","time":16.810673631,"data":"[1/4] Extracting 3-channel time-series tensors for Dataset B (PsPM-AOB)...\n"}
+,{"stream_name":"stdout","time":38.665227379,"data":"  Dataset B tensor shape: (18066, 3, 201) (N=18066, Positives=2209 (12.23%))\n"}
+,{"stream_name":"stdout","time":38.665270631,"data":"\n"}
+,{"stream_name":"stdout","time":38.665274203,"data":"[2/4] Extracting 3-channel time-series tensors for Dataset A (APURE)...\n"}
+,{"stream_name":"stdout","time":41.843400745,"data":"  Dataset A tensor shape: (2301, 3, 201) (N=2301, Positives=1101 (47.85%))\n"}
+,{"stream_name":"stdout","time":41.843431527999996,"data":"\n"}
+,{"stream_name":"stdout","time":41.843437521,"data":"[3/4] Running Leakage-Free Stratified Group 5-Fold CV on Task 1 (PsPM-AOB)...\n"}
+,{"stream_name":"stdout","time":41.84344283,"data":"  -\u003e Training \u0026 Evaluating Multi-Scale 1D-CNN...\n"}
+,{"stream_name":"stdout","time":1708.015724073,"data":"     ROC-AUC: 0.7438 [95% CI: 0.7327, 0.7547] | PR-AUC: 0.3250 [95% CI: 0.3055, 0.3487] | BalAcc: 0.6848 | (1666.2s)\n"}
+,{"stream_name":"stdout","time":1708.015775673,"data":"  -\u003e Training \u0026 Evaluating Bi-LSTM with Attention...\n"}
+,{"stream_name":"stdout","time":12416.789183378,"data":"     ROC-AUC: 0.7551 [95% CI: 0.7437, 0.7663] | PR-AUC: 0.3594 [95% CI: 0.3396, 0.3818] | BalAcc: 0.7008 | (10708.8s)\n"}
+,{"stream_name":"stdout","time":12416.789235615,"data":"  -\u003e Training \u0026 Evaluating Dilated TCN...\n"}
+,{"stream_name":"stdout","time":18663.339183298,"data":"     ROC-AUC: 0.7313 [95% CI: 0.7202, 0.7427] | PR-AUC: 0.2914 [95% CI: 0.2740, 0.3108] | BalAcc: 0.6749 | (6246.6s)\n"}
+,{"stream_name":"stdout","time":18663.339260934,"data":"  -\u003e Training \u0026 Evaluating CNN-Transformer...\n"}
+,{"stream_name":"stdout","time":23727.199645867,"data":"     ROC-AUC: 0.8436 [95% CI: 0.8347, 0.8529] | PR-AUC: 0.5124 [95% CI: 0.4897, 0.5379] | BalAcc: 0.7713 | (5063.9s)\n"}
+,{"stream_name":"stdout","time":23727.199681838,"data":"\n"}
+,{"stream_name":"stdout","time":23727.199687434,"data":"Running Loss Function Ablation on Multi-Scale 1D-CNN (Focal Loss vs Weighted BCE)...\n"}
+,{"stream_name":"stdout","time":25141.971644676,"data":"  Weighted BCE: ROC-AUC=0.7427, PR-AUC=0.3193\n"}
+,{"stream_name":"stdout","time":25141.971682887,"data":"  Focal Loss:   ROC-AUC=0.7438, PR-AUC=0.3250\n"}
+,{"stream_name":"stdout","time":25141.971688504,"data":"\n"}
+,{"stream_name":"stdout","time":25141.971692937,"data":"[4/4] Running Leakage-Free Stratified Group 5-Fold CV on Task 2 (APURE)...\n"}
+,{"stream_name":"stdout","time":25141.971704654,"data":"  -\u003e Training \u0026 Evaluating Multi-Scale 1D-CNN...\n"}
+,{"stream_name":"stdout","time":25253.126532037,"data":"     ROC-AUC: 0.5777 [95% CI: 0.5545, 0.6030] | PR-AUC: 0.5333 [95% CI: 0.5060, 0.5629] | BalAcc: 0.5641 | (111.2s)\n"}
+,{"stream_name":"stdout","time":25253.126583472,"data":"  -\u003e Training \u0026 Evaluating Bi-LSTM with Attention...\n"}
+,{"stream_name":"stdout","time":26082.848846385,"data":"     ROC-AUC: 0.5364 [95% CI: 0.5152, 0.5602] | PR-AUC: 0.4989 [95% CI: 0.4736, 0.5310] | BalAcc: 0.5371 | (829.7s)\n"}
+,{"stream_name":"stdout","time":26082.8489044,"data":"  -\u003e Training \u0026 Evaluating Dilated TCN...\n"}
+,{"stream_name":"stdout","time":26548.587278158,"data":"     ROC-AUC: 0.5465 [95% CI: 0.5241, 0.5714] | PR-AUC: 0.5058 [95% CI: 0.4791, 0.5378] | BalAcc: 0.5500 | (465.7s)\n"}
+,{"stream_name":"stdout","time":26548.587326735,"data":"\n"}
+,{"stream_name":"stdout","time":26548.587333747,"data":"Generating publication figures in results/figures/...\n"}
+,{"stream_name":"stdout","time":26551.113400856,"data":"  Figures successfully saved to results/figures/.\n"}
+,{"stream_name":"stdout","time":26551.113442444,"data":"\n"}
+,{"stream_name":"stdout","time":26551.113448531,"data":"Writing comprehensive DEEP_LEARNING_REPORT.md...\n"}
+,{"stream_name":"stdout","time":26551.113453169,"data":"Report successfully written to /kaggle/working/DEEP_LEARNING_REPORT.md\n"}
+,{"stream_name":"stdout","time":26551.113458407,"data":"\n"}
+,{"stream_name":"stdout","time":26551.113462517,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":26551.113467467,"data":"STEP 7 COMPLETE: ALL DEEP LEARNING BENCHMARKS, ATTENTION ANALYSES, AND REPORTS GENERATED\n"}
+,{"stream_name":"stdout","time":26551.113472247,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":26551.13410223,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134129123,"data":"Generated Outputs in /kaggle/working:\n"}
+,{"stream_name":"stdout","time":26551.13414458,"data":"  - DEEP_LEARNING_REPORT.md (9,662 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134149222,"data":"  - __notebook__.ipynb (221,269 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134153316,"data":"  - results/figures/dl_loss_comparison.png (125,615 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134157663,"data":"  - results/figures/dl_vs_classical_pr_task1.png (378,996 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134161201,"data":"  - results/figures/dl_vs_classical_roc_task1.png (425,893 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134164657,"data":"  - results/figures/roc_curves_dl_task2_dataset_a.png (332,956 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134168102,"data":"  - results/figures/temporal_attention_weights.png (529,298 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134171526,"data":"  - scripts/__init__.py (28 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134174793,"data":"  - scripts/__pycache__/__init__.cpython-312.pyc (168 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134178139,"data":"  - scripts/__pycache__/run_deep_learning_benchmarks.cpython-312.pyc (37,025 bytes)\n"}
+,{"stream_name":"stdout","time":26551.13418159,"data":"  - scripts/__pycache__/visualize_raw_traces.cpython-312.pyc (5,587 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134185035,"data":"  - scripts/build_kaggle_notebook.py (8,962 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134188386,"data":"  - scripts/fetch_kaggle_output.py (1,719 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134191696,"data":"  - scripts/kaggle_pull.sh (961 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134195019,"data":"  - scripts/kaggle_push.sh (736 bytes)\n"}
+,{"stream_name":"stdout","time":26551.1341983,"data":"  - scripts/kaggle_status.sh (102 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134201495,"data":"  - scripts/kaggle_upload_dataset.sh (1,031 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134204544,"data":"  - scripts/prepare_kaggle_dataset.py (2,077 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134209216,"data":"  - scripts/run_classical_ml_baselines.py (33,229 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134231769,"data":"  - scripts/run_deep_learning_benchmarks.py (29,534 bytes)\n"}
+,{"stream_name":"stdout","time":26551.13423599,"data":"  - scripts/run_physiological_baseline.py (29,924 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134239858,"data":"  - scripts/run_preprocessing.py (12,362 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134243832,"data":"  - scripts/run_summary.py (2,149 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134247582,"data":"  - scripts/visualize_raw_traces.py (3,762 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134251963,"data":"  - src/__init__.py (68 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134255266,"data":"  - src/__pycache__/__init__.cpython-312.pyc (265 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134258327,"data":"  - src/__pycache__/classical_models.cpython-312.pyc (19,758 bytes)\n"}
+,{"stream_name":"stdout","time":26551.13426813,"data":"  - src/__pycache__/deep_learning_models.cpython-312.pyc (25,854 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134272131,"data":"  - src/__pycache__/deep_learning_trainer.cpython-312.pyc (12,829 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134276072,"data":"  - src/__pycache__/download.cpython-312.pyc (9,412 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134279569,"data":"  - src/__pycache__/feature_extraction.cpython-312.pyc (15,068 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134283021,"data":"  - src/__pycache__/parser_a.cpython-312.pyc (8,493 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134286413,"data":"  - src/__pycache__/parser_b.cpython-312.pyc (6,320 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134294793,"data":"  - src/__pycache__/physiological_baseline.cpython-312.pyc (12,874 bytes)\n"}
+,{"stream_name":"stdout","time":26551.13429822,"data":"  - src/__pycache__/preprocessing.cpython-312.pyc (19,766 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134302966,"data":"  - src/__pycache__/quality_audit.cpython-312.pyc (12,377 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134307448,"data":"  - src/__pycache__/schema.cpython-312.pyc (5,148 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134345449,"data":"  - src/__pycache__/summary.cpython-312.pyc (6,995 bytes)\n"}
+,{"stream_name":"stdout","time":26551.13436116,"data":"  - src/classical_models.py (15,715 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134365958,"data":"  - src/deep_learning_models.py (16,406 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134369686,"data":"  - src/deep_learning_trainer.py (9,815 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134373063,"data":"  - src/download.py (6,305 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134376723,"data":"  - src/download_b.py (3,001 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134380454,"data":"  - src/feature_extraction.py (14,093 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134384278,"data":"  - src/parser_a.py (7,175 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134388108,"data":"  - src/parser_b.py (4,616 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134391502,"data":"  - src/physiological_baseline.py (10,033 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134394816,"data":"  - src/preprocessing.py (16,167 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134398545,"data":"  - src/quality_audit.py (10,834 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134402338,"data":"  - src/schema.py (3,859 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134406041,"data":"  - src/summary.py (4,311 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134409179,"data":"  - src/train.py (8,796 bytes)\n"}
+,{"stream_name":"stdout","time":26551.134413031,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134416926,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":26551.134420503,"data":"DEEP_LEARNING_REPORT.md HEAD:\n"}
+,{"stream_name":"stdout","time":26551.13442383,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":26551.134427356,"data":"# STEP 7: Deep Learning Architectures \u0026 End-to-End Benchmarks Report\n"}
+,{"stream_name":"stdout","time":26551.134431045,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134435792,"data":"\n"}
+,{"stream_name":"stdout","time":26551.13445906,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134463003,"data":"**Date:** 2026-08-30  \n"}
+,{"stream_name":"stdout","time":26551.134466548,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134470601,"data":"**Validation Standard:** Leakage-Free Stratified Group 5-Fold Cross-Validation (`StratifiedGroupKFold` grouped strictly by `subject_id`).  \n"}
+,{"stream_name":"stdout","time":26551.134474922,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134478334,"data":"**Uncertainty Estimation:** 500-iteration Percentile Bootstrap 95% Confidence Intervals on out-of-fold predictions.\n"}
+,{"stream_name":"stdout","time":26551.134481946,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134485236,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134488352,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134491505,"data":"---\n"}
+,{"stream_name":"stdout","time":26551.13449464,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134497874,"data":"\n"}
+,{"stream_name":"stdout","time":26551.13451958,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134522409,"data":"## Executive Summary \u0026 Deep Learning vs Classical ML Comparison\n"}
+,{"stream_name":"stdout","time":26551.134540887,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134544799,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134548588,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134552635,"data":"1. **Task 1: Single-Trial Acoustic Salience Discrimination (Dataset B, PsPM-AOB, $N=66$, 18,066 epochs):**\n"}
+,{"stream_name":"stdout","time":26551.134556718,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134561058,"data":"   * **Top Performing Deep Learning Model:** **CNN-Transformer** achieved an out-of-fold **ROC-AUC of 0.844** (95% CI: [0.835, 0.853]) and a **PR-AUC of 0.512** (95% CI: [0.490, 0.538]).\n"}
+,{"stream_name":"stdout","time":26551.134564895,"data":"\n"}
+,{"stream_name":"stdout","time":26551.1345681,"data":"   * **Comparison against Step 6 Classical ML:**\n"}
+,{"stream_name":"stdout","time":26551.134571406,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134575801,"data":"     * `Multi-Scale 1D-CNN` (ROC-AUC = 0.744, PR-AUC = 0.325) and `Dilated TCN` (ROC-AUC = 0.731, PR-AUC = 0.291) perform on par with top gradient boosted ensembles (`HistGradientBoosting`: ROC-AUC = 0.810, PR-AUC = 0.462; `XGBoost`: ROC-AUC = 0.806, PR-AUC = 0.465), while operating directly on raw 3-channel time-series without explicit feature engineering.\n"}
+,{"stream_name":"stdout","time":26551.134584648,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134589586,"data":"     * Deep Learning models significantly outperform linear baselines (`Logistic Regression`: ROC-AUC = 0.763, PR-AUC = 0.326; $p \u003c 0.001$).\n"}
+,{"stream_name":"stdout","time":26551.134593374,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134596623,"data":"   * **Temporal Attention Saliency:** The attention weights $\\alpha_t$ extracted from `BiLSTMAttentionNet` exhibit a prominent peak between **$t = 0.8\\text{s}$ and $t = 2.2\\text{s}$**, aligning precisely with the physiologically expected peak dilation window of human Auditory-Evoked Pupillary Responses.\n"}
+,{"stream_name":"stdout","time":26551.134600905,"data":"\n"}
+,{"stream_name":"stdout","time":26551.13460616,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134609353,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134614595,"data":"2. **Task 2: Stimulus-Presence vs Resting State (Dataset A, APURE, $N=19$, 2,301 epochs):**\n"}
+,{"stream_name":"stdout","time":26551.134618723,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134622341,"data":"   * **Top Performing Deep Learning Model:** **Multi-Scale 1D-CNN** achieved an out-of-fold **ROC-AUC of 0.578** (95% CI: [0.555, 0.603]) and a **PR-AUC of 0.533**.\n"}
+,{"stream_name":"stdout","time":26551.134626738,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134629789,"data":"   * **Physiological Ground Truth \u0026 Block Confound:** Neural networks trained on dynamic raw time series without static block-level baseline offsets yield modest single-trial discrimination (~0.55–0.65 AUC), in direct agreement with the non-significant group-level AEPR trend observed in Dataset A ($p_{\\text{adj}} = 0.055, d_z = 0.55$).\n"}
+,{"stream_name":"stdout","time":26551.134634875,"data":"\n"}
+,{"stream_name":"stdout","time":26551.13463835,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134641714,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134644706,"data":"---\n"}
+,{"stream_name":"stdout","time":26551.134648192,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134651347,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134654546,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134657505,"data":"## 1. Primary Task 1: Single-Trial Acoustic Salience Benchmarks (PsPM-AOB)\n"}
+,{"stream_name":"stdout","time":26551.134667329,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134671415,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134674938,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134680445,"data":"### Benchmark Setup:\n"}
+,{"stream_name":"stdout","time":26551.134684315,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134688026,"data":"* **Cohort:** 66 healthy participants, 18,066 trial epochs at 50 Hz ($T = 201$ timepoints).\n"}
+,{"stream_name":"stdout","time":26551.13469184,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134695437,"data":"* **Multi-Channel Input Tensor ($C=3$):** Subtractive dilation $\\Delta P(t)$, Divisive signal $\\%\\Delta P(t)$, Instantaneous velocity $\\frac{d\\Delta P}{dt}$.\n"}
+,{"stream_name":"stdout","time":26551.134699986,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134703472,"data":"* **Validation:** Stratified Group 5-Fold Cross-Validation grouped strictly by `subject_id`.\n"}
+,{"stream_name":"stdout","time":26551.134714155,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134717912,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134721383,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134724978,"data":"### Deep Learning vs Classical ML Quantitative Comparison Table:\n"}
+,{"stream_name":"stdout","time":26551.134728602,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134732106,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134735473,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134739181,"data":"| Model Architecture | Model Class | ROC-AUC [95% CI] | PR-AUC [95% CI] | Bal. Acc | Sens | Spec | PPV | NPV | Macro F1 | Brier Score |\n"}
+,{"stream_name":"stdout","time":26551.134743309,"data":"\n"}
+,{"stream_name":"stdout","time":26551.13474703,"data":"| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n"}
+,{"stream_name":"stdout","time":26551.134751023,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134754658,"data":"| **Multi-Scale 1D-CNN** | Deep Learning | **0.744** [0.733, 0.755] | **0.325** [0.305, 0.349] | 0.685 | 0.632 | 0.738 | 0.251 | 0.935 | 0.592 | 0.167 |\n"}
+,{"stream_name":"stdout","time":26551.134759221,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134764306,"data":"| **Bi-LSTM with Attention** | Deep Learning | **0.755** [0.744, 0.766] | **0.359** [0.340, 0.382] | 0.701 | 0.665 | 0.736 | 0.260 | 0.940 | 0.600 | 0.166 |\n"}
+,{"stream_name":"stdout","time":26551.134768541,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134772023,"data":"| **Dilated TCN** | Deep Learning | **0.731** [0.720, 0.743] | **0.291** [0.274, 0.311] | 0.675 | 0.721 | 0.629 | 0.213 | 0.942 | 0.541 | 0.172 |\n"}
+,{"stream_name":"stdout","time":26551.134776175,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134779898,"data":"| **CNN-Transformer** | Deep Learning | **0.844** [0.835, 0.853] | **0.512** [0.490, 0.538] | 0.771 | 0.748 | 0.794 | 0.336 | 0.958 | 0.666 | 0.131 |\n"}
+,{"stream_name":"stdout","time":26551.134783583,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134786686,"data":"| *HistGradientBoosting (Step 6 Best)* | Classical Tree | 0.810 [0.801, 0.820] | 0.462 [0.442, 0.484] | 0.740 | 0.706 | 0.775 | 0.304 | 0.950 | 0.639 | 0.148 |\n"}
+,{"stream_name":"stdout","time":26551.13479041,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134793559,"data":"| *Random Forest (Step 6)* | Classical Tree | 0.808 [0.798, 0.818] | 0.450 [0.431, 0.470] | 0.741 | 0.677 | 0.805 | 0.326 | 0.947 | 0.655 | 0.117 |\n"}
+,{"stream_name":"stdout","time":26551.134797131,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134800259,"data":"| *Logistic Regression L2 (Step 6)* | Classical Linear | 0.763 [0.752, 0.773] | 0.326 [0.307, 0.346] | 0.701 | 0.710 | 0.692 | 0.243 | 0.945 | 0.581 | 0.199 |\n"}
+,{"stream_name":"stdout","time":26551.134808181,"data":"\n"}
+,{"stream_name":"stdout","time":26551.13481148,"data":"| *Single-Feature Heuristic (Step 6)* | Physiological | 0.646 [0.635, 0.658] | 0.177 [0.168, 0.188] | 0.618 | 0.715 | 0.520 | 0.172 | 0.929 | 0.472 | 0.237 |\n"}
+,{"stream_name":"stdout","time":26551.13481525,"data":"\n"}
+,{"stream_name":"stdout","time":26551.13481841,"data":"| *Prior Majority Baseline* | Chance | 0.493 [0.482, 0.505] | 0.120 [0.114, 0.126] | 0.500 | 0.000 | 1.000 | 0.000 | 0.878 | 0.467 | 0.107 |\n"}
+,{"stream_name":"stdout","time":26551.134822012,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134825094,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134828312,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134832125,"data":"### Diagnostic Visualizations (Task 1):\n"}
+,{"stream_name":"stdout","time":26551.134836174,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134839896,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134843868,"data":"\n"}
+,{"stream_name":"stdout","time":26551.1348477,"data":"![DL vs Classical ROC](file:///kaggle/working/results/figures/dl_vs_classical_roc_task1.png)\n"}
+,{"stream_name":"stdout","time":26551.134852029,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134855817,"data":"*Figure 1: Receiver Operating Characteristic (ROC) curves comparing end-to-end Deep Learning architectures against classical machine learning baselines on Task 1 (Dataset B, N=66).*\n"}
+,{"stream_name":"stdout","time":26551.134860124,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134863291,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134866438,"data":"\n"}
+,{"stream_name":"stdout","time":26551.134869735,"data":"![DL vs Classical PR](file:///kaggle/working/results/figures/dl_vs_classical_pr_task1.png)\n"}
+,{"stream_name":"stdout","time":26551.134873261,"data":"\n"}
+,{"stream_name":"stderr","time":26556.815826881,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":26556.815883592,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":26556.961327871,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":26556.961366053,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":26557.54726237,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":26557.845558816,"data":"[NbConvertApp] Writing 230113 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":26560.158640773,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":26560.964609229,"data":"[NbConvertApp] Writing 511243 bytes to __results__.html\n"}
+]
