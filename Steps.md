@@ -26,7 +26,7 @@ STEP 13:- CV pupil extraction from available video
 ↓
 STEP 14:- Compare CV signal vs provided signal        
 ↓
-STEP 15:- Optional multimodal EEG/ECG experiment        
+STEP 15:- Multimodal EEG/ECG experiment (Completed)        
 ↓
 STEP 16:- Ablation + statistical analysis        
 ↓
