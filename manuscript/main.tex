@@ -95,7 +95,7 @@ This study evaluates three distinct datasets representing diverse clinical parad
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/dataset_b_grand_average_oddball.png}
+\includegraphics[width=\columnwidth]{dataset_b_grand_average_oddball.png}
 \caption{Grand-average Auditory-Evoked Pupillary Response (AEPR) waveforms across $N=66$ subjects in the PsPM-AOB oddball paradigm. Shaded ribbons indicate 95\% confidence intervals. Deviant target tones evoke marked sympathetic dilation peaking at $1.2\text{--}1.6$\,s post-stimulus.}
 \label{fig:grand_average}
 \end{figure}
@@ -168,7 +168,7 @@ Chance Baseline             & ---            & 0.493 [0.482,\,0.505]         & 0
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/dl_vs_classical_roc_task1.png}
+\includegraphics[width=\columnwidth]{dl_vs_classical_roc_task1.png}
 \caption{Receiver Operating Characteristic (ROC) curves comparing deep learning architectures against classical machine learning baselines on single-trial acoustic salience detection (PsPM-AOB, $N=66$). The CNN-Transformer achieves state-of-the-art discrimination ($\text{ROC-AUC} = 0.844$).}
 \label{fig:dl_vs_classical_roc}
 \end{figure}
@@ -200,7 +200,7 @@ Table~\ref{tab:task2_results} shows results for the APURE Dataset A stimulus-pre
 \subsection{Physiological Interpretability \& Attention Saliency}
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/temporal_attention_weights.png}
+\includegraphics[width=\columnwidth]{temporal_attention_weights.png}
 \caption{Learned temporal self-attention distribution across time steps. Saliency automatically peaks between $t = 0.8$\,s and $t = 2.2$\,s (maximum at 1.35\,s), spontaneously discovering the biological LC-NE pupillary dilation window without manual feature engineering.}
 \label{fig:attention_weights}
 \end{figure}
@@ -211,14 +211,14 @@ Analysis of learned attention weights $\alpha_t$ across all out-of-fold trials r
 \subsection{Latency Truncation and Hardware Downsampling}
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/robustness_early_detection_latency.png}
+\includegraphics[width=\columnwidth]{robustness_early_detection_latency.png}
 \caption{Screening classification performance as a function of observation window truncation (HistGradientBoosting classifier). Discrimination peaks at $t = 1.0\text{s}$ (AUC = 0.744) and truncating at $t = 1.5\text{s}$ retains ${\approx}96\%$ of maximal performance (AUC = 0.713), enabling a 50\% reduction in trial duration.}
 \label{fig:latency_truncation}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/cv_vs_provided_correlation_scatter.png}
+\includegraphics[width=\columnwidth]{cv_vs_provided_correlation_scatter.png}
 \caption{Concordance scatter plot comparing direct computer vision least-squares ellipse fitting on 30\,fps webcam video against ground truth EyeLink 1000 infrared eye-tracker measurements (Pearson $r = 0.991, p < 10^{-15}$).}
 \label{fig:cv_correlation}
 \end{figure}
@@ -236,7 +236,7 @@ Analysis of learned attention weights $\alpha_t$ across all out-of-fold trials r
 \subsection{Multimodal Tri-Modal Extension (Dataset C)}
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/multimodal_modality_comparison.png}
+\includegraphics[width=\columnwidth]{multimodal_modality_comparison.png}
 \caption{Multimodal fusion benchmark on Dataset C (OpenNeuro ds003690, $N=6$). Cross-attention fusion (Pupil + ECG + EEG) substantially outperforms ECG-only and EEG-only baselines; at this small cohort size, pupil-alone remains the strongest single modality.}
 \label{fig:multimodal_comparison}
 \end{figure}
