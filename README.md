@@ -6,6 +6,7 @@
 [![SOTA ROC-AUC](https://img.shields.io/badge/SOTA_ROC--AUC-0.844-brightgreen.svg?style=flat-square)]()
 [![Leakage-Free](https://img.shields.io/badge/Validation-Group_K--Fold_(Zero_Leakage)-orange.svg?style=flat-square)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22526582.svg)](https://doi.org/10.5281/zenodo.22526582)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-success.svg?style=flat-square&logo=github)](https://raju-sah.github.io/Pupillary-Response-for-Hearing-Screening/)
 
 An end-to-end deep representation learning and computer vision framework for **objective, non-invasive hearing screening and acoustic salience detection** using Auditory-Evoked Pupillary Responses (AEPR).
