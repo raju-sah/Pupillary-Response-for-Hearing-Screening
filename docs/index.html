@@ -44,19 +44,48 @@
           <span>⚙ Clinical Acquisition Controls</span>
         </div>
 
-        <!-- Preset Trial Selector -->
-        <div class="control-group">
-          <label class="control-label" for="trial-select">
-            <span>Select Clinical Trial</span>
-            <span class="control-value" id="trial-id-badge">trial-01</span>
-          </label>
-          <select id="trial-select">
-            <option value="0">PsPM-AOB: Deviant Oddball Tone (Salient)</option>
-            <option value="1">PsPM-AOB: Standard Frequent Tone (Non-Salient)</option>
-            <option value="2">APURE: 1000 Hz Acoustic Tone (Stimulus Present)</option>
-            <option value="3">APURE: Resting Baseline Control (No Stimulus)</option>
-            <option value="4">PsPM-AOB: Blink-Corrupted Trial</option>
-          </select>
+        <!-- Data Source Switcher Tabs -->
+        <div class="tab-switcher">
+          <button class="tab-btn active" id="tab-presets" type="button">Clinical Presets</button>
+          <button class="tab-btn" id="tab-upload" type="button">Upload CSV / Video</button>
+        </div>
+
+        <!-- Presets Section -->
+        <div id="presets-container">
+          <div class="control-group">
+            <label class="control-label" for="trial-select">
+              <span>Select Clinical Trial</span>
+              <span class="control-value" id="trial-id-badge">trial-01</span>
+            </label>
+            <select id="trial-select">
+              <option value="0">PsPM-AOB: Deviant Oddball Tone (Salient)</option>
+              <option value="1">PsPM-AOB: Standard Frequent Tone (Non-Salient)</option>
+              <option value="2">APURE: 1000 Hz Acoustic Tone (Stimulus Present)</option>
+              <option value="3">APURE: Resting Baseline Control (No Stimulus)</option>
+              <option value="4">PsPM-AOB: Blink-Corrupted Trial</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Custom Upload Section -->
+        <div id="upload-container" style="display: none;">
+          <div class="upload-dropzone" id="drop-zone">
+            <svg class="upload-icon" viewBox="0 0 24 24">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+            </svg>
+            <p class="dropzone-title">Drop your recording file here</p>
+            <p class="dropzone-subtitle">Accepts <code>.csv</code>, <code>.tsv</code>, <code>.txt</code> or Eye Video (<code>.mp4</code>)</p>
+            <input type="file" id="file-input" accept=".csv,.tsv,.txt,.mp4,.webm" style="display: none;">
+            <button class="browse-btn" type="button" id="browse-btn">Browse Computer</button>
+          </div>
+          <div class="file-status-pill" id="file-status" style="display: none;">
+            <span class="file-status-dot"></span>
+            <span id="file-name-display">user_data.csv</span>
+            <span class="file-clear-btn" id="clear-file-btn" title="Reset to presets">&times;</span>
+          </div>
+          <div class="sample-download-box">
+            <button class="sample-link-btn" id="download-sample-csv" type="button">📥 Download Sample CSV Template</button>
+          </div>
         </div>
 
         <!-- Latency Truncation Slider -->
