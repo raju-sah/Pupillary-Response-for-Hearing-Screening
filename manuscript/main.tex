@@ -9,7 +9,6 @@
 \usepackage{multirow}
 \usepackage{cite}
 \usepackage{url}
-\usepackage{subcaption}
 
 \begin{document}
 
@@ -71,6 +70,13 @@ This study evaluates three distinct datasets representing diverse clinical parad
     \item \textbf{Dataset C (OpenNeuro ds003690, Multimodal Extension):} Synchronized 240/500~Hz pupillometry, chest ECG (EKG), and 64-channel EEG across young and older cohorts during auditory reaction time tasks \cite{ribeiro2019age, ribeiro2019neural}.
 \end{enumerate}
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/dataset_b_grand_average_oddball.png}
+\caption{Grand-average Auditory-Evoked Pupillary Response (AEPR) waveforms across $N=66$ subjects in the PsPM-AOB oddball paradigm. Shaded ribbons indicate 95\% confidence intervals. Deviant target tones evoke marked sympathetic dilation peaking at $1.2\text{--}1.6$\,s post-stimulus.}
+\label{fig:grand_average}
+\end{figure}
+
 \subsection{Signal Decontamination Protocol}
 Raw pupillometric traces are corrupted by blinks, saccadic micro-tremors, and baseline illumination drift:
 \begin{itemize}
@@ -81,6 +87,7 @@ Raw pupillometric traces are corrupted by blinks, saccadic micro-tremors, and ba
         \Delta P(t) = P(t) - P_{\text{base}}, \quad \%\Delta P(t) = \frac{\Delta P(t)}{P_{\text{base}}} \times 100\%
     \end{equation}
 \end{itemize}
+The grand-average response following this decontamination protocol is depicted in Fig.~\ref{fig:grand_average}.
 
 \section{Methodology \& Model Architectures}
 
@@ -95,7 +102,7 @@ For each epoch, we construct a 3-channel temporal tensor $\mathbf{X} \in \mathbb
     \begin{equation}
         e_t = \mathbf{v}_a^\top \tanh(\mathbf{W}_a \mathbf{h}_t + \mathbf{b}_a), \quad \alpha_t = \frac{\exp(e_t)}{\sum_{k=1}^T \exp(e_k)}
     \end{equation}
-    \item \textbf{CNN-Transformer:} Combines a 3-layer 1D convolutional tokenizer with a multi-head self-attention Transformer encoder (4 heads, 2 layers, feed-forward dimension 128) and temporal pooling.
+    \item \textbf{CNN-Transformer:} Combines a 3-layer 1D convolutional tokenizer with a multi-head self-attention Transformer encoder \cite{vaswani2017attention} (4 heads, 2 layers, feed-forward dimension 128) and temporal pooling.
 \end{itemize}
 
 \section{Experimental Results}
@@ -123,20 +130,55 @@ Chance Baseline & 0.493 [0.482, 0.505] & 0.120 & 0.500 & 0.107 \\
 \end{tabular}
 \end{table}
 
-As summarized in Table~\ref{tab:task1_results}, \textbf{CNN-Transformer} achieves the highest screening accuracy across all metrics, attaining an ROC-AUC of 0.844. Paired DeLong non-parametric testing confirmed that CNN-Transformer statistically significantly outperforms the best classical tree ensemble ($Z = 9.48, p < 10^{-15}$) and the single-feature clinical heuristic ($Z = 33.6, p < 10^{-15}$).
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/dl_vs_classical_roc_task1.png}
+\caption{Receiver Operating Characteristic (ROC) curves comparing deep learning architectures against classical machine learning baselines on single-trial acoustic salience detection (PsPM-AOB, $N=66$). The CNN-Transformer achieves state-of-the-art discrimination ($\text{ROC-AUC} = 0.844$).}
+\label{fig:dl_vs_classical_roc}
+\end{figure}
+
+As summarized in Table~\ref{tab:task1_results} and Fig.~\ref{fig:dl_vs_classical_roc}, \textbf{CNN-Transformer} achieves the highest screening accuracy across all metrics, attaining an ROC-AUC of 0.844. Paired DeLong non-parametric testing \cite{delong1988comparing} confirmed that CNN-Transformer statistically significantly outperforms the best classical tree ensemble ($Z = 9.48, p < 10^{-15}$) and the single-feature clinical heuristic ($Z = 33.6, p < 10^{-15}$).
 
 \subsection{Physiological Interpretability \& Attention Saliency}
-Analysis of learned attention weights $\alpha_t$ across all out-of-fold trials reveals a prominent attention focus between $t = 0.8\text{s}$ and $t = 2.2\text{s}$ (peaking at $1.35\text{s}$). This corresponds precisely to the known human autonomic pupillary dilation window, verifying that the deep neural network learned genuine physiological LC-NE dynamics rather than opportunistic artifacts.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/temporal_attention_weights.png}
+\caption{Learned temporal self-attention distribution across time steps. Saliency automatically peaks between $t = 0.8$\,s and $t = 2.2$\,s (maximum at 1.35\,s), spontaneously discovering the biological LC-NE pupillary dilation window without manual feature engineering.}
+\label{fig:attention_weights}
+\end{figure}
+
+Analysis of learned attention weights $\alpha_t$ across all out-of-fold trials reveals a prominent attention focus between $t = 0.8\text{s}$ and $t = 2.2\text{s}$ (peaking at $1.35\text{s}$, Fig.~\ref{fig:attention_weights}). This corresponds precisely to the known human autonomic pupillary dilation window, verifying that the deep neural network learned genuine physiological LC-NE dynamics rather than opportunistic artifacts.
 
 \subsection{Latency Truncation and Hardware Downsampling}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/robustness_early_detection_latency.png}
+\caption{Screening classification performance as a function of observation window truncation. Truncating at $t = 1.5$\,s preserves $>98\%$ of maximal screening accuracy, enabling a 50\% reduction in trial duration.}
+\label{fig:latency_truncation}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/cv_vs_provided_correlation_scatter.png}
+\caption{Concordance scatter plot comparing direct computer vision least-squares ellipse fitting on 30\,fps webcam video against ground truth EyeLink 1000 infrared eye-tracker measurements (Pearson $r = 0.991, p < 10^{-15}$).}
+\label{fig:cv_correlation}
+\end{figure}
+
 \begin{itemize}
-    \item \textbf{Early Latency Truncation:} Truncating the trial evaluation window to $t = 1.5\text{s}$ post-stimulus retains $>98\%$ of maximal classification performance (ROC-AUC = 0.744 vs 0.755), enabling a 50\% reduction in overall clinical screening duration.
+    \item \textbf{Early Latency Truncation:} As shown in Fig.~\ref{fig:latency_truncation}, truncating the trial evaluation window to $t = 1.5\text{s}$ post-stimulus retains $>98\%$ of maximal classification performance (ROC-AUC = 0.744 vs 0.755), enabling a 50\% reduction in overall clinical screening duration.
     \item \textbf{Downsampling Resilience:} Reducing the sampling frequency from 50~Hz down to 10~Hz incurs a performance penalty of $\Delta\text{AUC} < 0.005$, proving compatibility with low-cost camera sensors.
-    \item \textbf{Optical Video Ellipse Extraction:} Direct least-squares ellipse fitting on raw 30~fps eye video streams achieves Pearson $r = 0.991$ and Spearman $\rho = 0.989$ ($p < 10^{-15}$) against dedicated infrared hardware.
+    \item \textbf{Optical Video Ellipse Extraction:} Direct least-squares ellipse fitting on raw 30~fps eye video streams achieves Pearson $r = 0.991$ and Spearman $\rho = 0.989$ ($p < 10^{-15}$) against dedicated infrared hardware, as plotted in Fig.~\ref{fig:cv_correlation}.
 \end{itemize}
 
 \subsection{Multimodal Tri-Modal Extension (Dataset C)}
-Evaluating synchronized pupillometry, ECG, and EEG on OpenNeuro ds003690 revealed that cross-attention multimodal fusion achieves an ROC-AUC of 0.812, outperforming pupil-only (0.751), ECG-only (0.694), and central EEG-only (0.728) models ($p < 10^{-4}$), demonstrating the complementary diagnostic value of autonomic and cortical auditory responses.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/multimodal_modality_comparison.png}
+\caption{Multimodal fusion benchmark on Dataset C (OpenNeuro ds003690). Tri-modal Cross-Attention Fusion (Pupil + ECG + EEG) yields significant diagnostic performance gains ($\text{ROC-AUC} = 0.812$) over any single-modality baseline.}
+\label{fig:multimodal_comparison}
+\end{figure}
+
+Evaluating synchronized pupillometry, ECG, and EEG on OpenNeuro ds003690 revealed that cross-attention multimodal fusion achieves an ROC-AUC of 0.812 (Fig.~\ref{fig:multimodal_comparison}), outperforming pupil-only (0.751), ECG-only (0.694), and central EEG-only (0.728) models ($p < 10^{-4}$), demonstrating the complementary diagnostic value of autonomic and cortical auditory responses.
 
 \section{Conclusion}
 This paper establishes a rigorous, leak-free deep learning and computer vision framework for objective hearing screening via Auditory-Evoked Pupillary Responses. The CNN-Transformer establishes a new SOTA benchmark (ROC-AUC = 0.844), with autonomous attention localization aligning with human LC-NE biology. Demonstrated robustness to 1.5s observation windows, 10~Hz sampling rates, and video ellipse fitting ($r = 0.991$) proves the feasibility of deploying automated optical hearing screening on affordable commodity hardware.
