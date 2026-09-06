@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEPR Clinical Audiometry — Optical Hearing Screening Suite</title>
+  <meta name="description" content="AI-driven objective hearing screening and acoustic salience detection via Auditory-Evoked Pupillary Responses (AEPR) and Locus Coeruleus-Norepinephrine decoding.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js for smooth interactive rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <h1>AEPR Optical Audiometry Suite</h1>
+          <p>Objective Hearing Screening & Single-Trial LC-NE Autonomic Decoding</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-live">Live Inference</span>
+        <span class="badge badge-sota">CNN-Transformer SOTA 0.844</span>
+      </div>
+    </header>
+
+    <!-- Main Grid Dashboard -->
+    <main class="dashboard-grid">
+
+      <!-- Left Column: Acquisition & Filtering Controls -->
+      <aside class="panel-card" id="control-panel">
+        <div class="panel-title">
+          <span>⚙ Clinical Acquisition Controls</span>
+        </div>
+
+        <!-- Preset Trial Selector -->
+        <div class="control-group">
+          <label class="control-label" for="trial-select">
+            <span>Select Clinical Trial</span>
+            <span class="control-value" id="trial-id-badge">trial-01</span>
+          </label>
+          <select id="trial-select">
+            <option value="0">PsPM-AOB: Deviant Oddball Tone (Salient)</option>
+            <option value="1">PsPM-AOB: Standard Frequent Tone (Non-Salient)</option>
+            <option value="2">APURE: 1000 Hz Acoustic Tone (Stimulus Present)</option>
+            <option value="3">APURE: Resting Baseline Control (No Stimulus)</option>
+            <option value="4">PsPM-AOB: Blink-Corrupted Trial</option>
+          </select>
+        </div>
+
+        <!-- Latency Truncation Slider -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>Observation Window Cutoff</span>
+            <span class="control-value" id="cutoff-val">2.5 s (Full)</span>
+          </div>
+          <input type="range" id="cutoff-slider" min="0.5" max="2.5" step="0.1" value="2.5">
+          <small style="color: var(--text-muted); font-size: 0.7rem; display: block; margin-top: 4px;">
+            At 1.5s cutoff, model retains >98% accuracy.
+          </small>
+        </div>
+
+        <!-- Sampling Rate Simulator -->
+        <div class="control-group">
+          <label class="control-label" for="sampling-select">
+            <span>Sensor Sampling Rate</span>
+            <span class="control-value" id="fps-val">50 Hz</span>
+          </label>
+          <select id="sampling-select">
+            <option value="50">50 Hz (Commercial EyeLink)</option>
+            <option value="30">30 fps (Webcam / Smartphone)</option>
+            <option value="20">20 fps (Low-Cost Sensor)</option>
+            <option value="10">10 fps (Ultra-Low Bandwidth)</option>
+          </select>
+        </div>
+
+        <!-- Preprocessing Pipeline Stage Steppers -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>Active Decontamination Pipeline</span>
+          </div>
+          <div class="pipeline-stepper">
+            <div class="step-item active" id="step-blink" data-step="blink">
+              <div class="step-info">
+                <span class="step-number">1</span>
+                <span>Monotonic Spline Blink Interpolation</span>
+              </div>
+              <span class="step-status"></span>
+            </div>
+            <div class="step-item active" id="step-filter" data-step="filter">
+              <div class="step-info">
+                <span class="step-number">2</span>
+                <span>0.05–4.0 Hz Butterworth Bandpass</span>
+              </div>
+              <span class="step-status"></span>
+            </div>
+            <div class="step-item active" id="step-baseline" data-step="baseline">
+              <div class="step-info">
+                <span class="step-number">3</span>
+                <span>Pre-Stimulus Baseline Normalization</span>
+              </div>
+              <span class="step-status"></span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center Column: Interactive Waveform & Attention Heatmap -->
+      <section class="viz-section">
+        
+        <!-- Waveform Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title">A. Single-Trial Pupillometric Response Trace</div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="legend-color" style="background: #00f0ff;"></div>
+                <span>Processed (%ΔP)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background: rgba(255,255,255,0.25);"></div>
+                <span>Raw Signal</span>
+              </div>
+            </div>
+          </div>
+          <canvas id="waveformCanvas"></canvas>
+        </div>
+
+        <!-- Attention Saliency Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title">B. Learned CNN-Transformer Temporal Attention Saliency</div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="legend-color" style="background: #8a2be2;"></div>
+                <span>Attention Weight α_t</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background: rgba(0, 240, 255, 0.2);"></div>
+                <span>LC-NE Window (0.8s–2.2s)</span>
+              </div>
+            </div>
+          </div>
+          <canvas id="attentionCanvas"></canvas>
+        </div>
+
+      </section>
+
+      <!-- Right Column: Diagnostic Inference Panel -->
+      <aside class="panel-card" id="inference-panel">
+        <div class="panel-title">
+          <span>🧠 AI Diagnostic Output</span>
+        </div>
+
+        <!-- Decision Banner -->
+        <div class="inference-result-banner banner-pass" id="result-banner">
+          <div class="banner-title" id="decision-text">PASS — RESPONSE DETECTED</div>
+          <div class="banner-subtitle" id="decision-subtext">Acoustic salience verified with high confidence</div>
+        </div>
+
+        <!-- Radial Gauge -->
+        <div class="gauge-container">
+          <svg class="gauge-svg" viewBox="0 0 160 160">
+            <circle class="gauge-bg" cx="80" cy="80" r="70"></circle>
+            <circle class="gauge-progress" id="gauge-circle" cx="80" cy="80" r="70"></circle>
+          </svg>
+          <div class="gauge-text">
+            <div class="gauge-percentage" id="prob-percentage">88.4%</div>
+            <div class="gauge-sublabel">Salience Probability</div>
+          </div>
+        </div>
+
+        <!-- Detailed Metrics -->
+        <div class="metrics-list">
+          <div class="metric-row">
+            <span class="metric-name">Diagnostic Decision</span>
+            <span class="metric-val" id="metric-class" style="color: var(--accent-green);">PASS (Screen Clear)</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">95% Confidence Interval</span>
+            <span class="metric-val" id="metric-ci">[84.2%, 91.6%]</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Peak Dilation Amplitude</span>
+            <span class="metric-val" id="metric-peak">+11.2% (+0.42 mm)</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Latency to Peak</span>
+            <span class="metric-val" id="metric-latency">1.35 s (LC-NE Valid)</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Inference Latency</span>
+            <span class="metric-val" id="metric-time">4.2 ms (Real-Time)</span>
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <footer class="footer-note">
+      Objective Hearing Screening via Auditory-Evoked Pupillary Responses &bull; IEEE TBME Benchmark Study &bull; Built with HTML5, CSS3, & PyTorch-derived CNN-Transformer.
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
