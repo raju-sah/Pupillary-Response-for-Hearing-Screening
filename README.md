@@ -6,6 +6,7 @@
 [![SOTA ROC-AUC](https://img.shields.io/badge/SOTA_ROC--AUC-0.844-brightgreen.svg?style=flat-square)]()
 [![Leakage-Free](https://img.shields.io/badge/Validation-Group_K--Fold_(Zero_Leakage)-orange.svg?style=flat-square)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-success.svg?style=flat-square&logo=github)](https://raju-sah.github.io/Pupillary-Response-for-Hearing-Screening/)
 
 An end-to-end deep representation learning and computer vision framework for **objective, non-invasive hearing screening and acoustic salience detection** using Auditory-Evoked Pupillary Responses (AEPR).
 
@@ -216,11 +217,12 @@ pytest tests/ -v
 
 ## 💻 Interactive Screening Web Dashboard
 
-To launch the local interactive clinical screening dashboard:
+* **Live Cloud Deployment (GitHub Pages):** [https://raju-sah.github.io/Pupillary-Response-for-Hearing-Screening/](https://raju-sah.github.io/Pupillary-Response-for-Hearing-Screening/)
+* **Local Runner:**
 ```bash
 python webapp/server.py
 ```
-Open your browser at `http://localhost:8000` to inspect raw pupil traces, toggle filtering stages, test observation window truncation sliders, and view live CNN-Transformer inference with LC-NE attention saliency.
+Open your browser at `http://localhost:8088` to inspect raw pupil traces, toggle filtering stages, test observation window truncation sliders, and view live CNN-Transformer inference with LC-NE attention saliency.
 
 ---
 
