@@ -1,0 +1,6 @@
+Highlights:
+• End-to-end deep learning framework for objective optical hearing screening.
+• Standardized 21,164-trial leak-free benchmark across three clinical cohorts.
+• CNN-Transformer attains SOTA 0.844 ROC-AUC and 4.2x PR-AUC gain over baseline.
+• Self-attention isolates 0.8-2.2s LC-NE dilation window without supervision.
+• Truncating trials to 1.5s retains ~96% accuracy, halving test duration.

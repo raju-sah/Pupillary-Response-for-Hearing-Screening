@@ -1,0 +1,35 @@
+To:
+Editor-in-Chief
+Biomedical Signal Processing and Control (BSPC)
+Elsevier
+
+Subject: Submission of Original Research Manuscript
+
+Dear Editor-in-Chief and Editorial Board,
+
+We are pleased to submit our original research manuscript titled:
+"End-to-End Deep Representation Learning and Computer Vision for Objective Hearing Screening via Auditory-Evoked Pupillary Responses"
+for consideration as a Full Length Article in Biomedical Signal Processing and Control (BSPC).
+
+Universal newborn and pediatric hearing screening currently relies on Automated Auditory Brainstem Responses (AABR) and Otoacoustic Emissions (TEOAE), both of which suffer from practical bottlenecks: skin abrasion, probe dislodgement, susceptibility to ear canal vernix, and expensive hardware. The Auditory-Evoked Pupillary Response (AEPR), governed by the subcortical Locus Coeruleus-Norepinephrine (LC-NE) system, provides a non-invasive optical alternative. However, its adoption has been hampered by heuristic thresholds, vulnerability to motion artifacts, and subject leakage in prior studies.
+
+In this work, we present an end-to-end, reproducible deep learning and computer vision framework for single-trial acoustic salience detection:
+1. Standardized, Leakage-Free Benchmark: Across three multi-site cohorts (N=66, N=19, N=6; 21,164 single-trial epochs), we enforce strictly subject-independent 5-fold cross-validation (StratifiedGroupKFold).
+2. Deep Signal Architecture SOTA: Benchmarking classical models against Multi-Scale 1D-CNNs, Dilated TCNs, Bi-LSTMs with Bahdanau attention, and CNN-Transformers, our CNN-Transformer achieves state-of-the-art ROC-AUC of 0.844 (95% CI: [0.835, 0.853]) and PR-AUC of 0.512 (a 4.2x gain over the 0.122 chance baseline; DeLong paired test Z = 9.48, p < 10^-15).
+3. Physiological Saliency Discovery: Temporal self-attention autonomously isolates the primary discriminative window at t in [0.8s, 2.2s], faithfully mirroring human LC-NE autonomic dilation kinetics.
+4. 50% Latency Reduction: Observation windows can be truncated to t = 1.5s while preserving ~96% of maximal screening accuracy.
+5. Commodity Hardware Feasibility: Direct least-squares ellipse fitting on 30 fps eye video achieves Pearson r = 0.991 (p < 10^-15) against research-grade infrared eye-trackers.
+
+This manuscript aligns squarely with the scope of Biomedical Signal Processing and Control, specifically advancing physiological time-series modeling, signal decontamination, and neural network classification for diagnostic biosignals.
+
+This work is entirely original, has not been published elsewhere, and is not currently under consideration by any other journal. All authors have approved the submission.
+
+Thank you for your time and consideration of our work.
+
+Sincerely,
+
+Raju Sah
+Department of Computer Engineering
+Cosmos College of Management and Technology, Pokhara University
+Kathmandu, Nepal
+Email: rajucode7@gmail.com

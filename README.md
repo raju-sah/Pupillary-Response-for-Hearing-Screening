@@ -2,7 +2,7 @@
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg?style=flat-square&logo=python)](https://www.python.org/)
 [![PyTorch 2.x](https://img.shields.io/badge/PyTorch-2.x-EE4C2C.svg?style=flat-square&logo=pytorch)](https://pytorch.org/)
-[![Target Venue](https://img.shields.io/badge/Target_Venue-IEEE_TBME_/_Nature_SciRep-success.svg?style=flat-square)]()
+[![Submitted to](https://img.shields.io/badge/Submitted_to-Elsevier_BSPC_(Under_Review)-blue.svg?style=flat-square)](https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control)
 [![SOTA ROC-AUC](https://img.shields.io/badge/SOTA_ROC--AUC-0.844-brightgreen.svg?style=flat-square)]()
 [![Leakage-Free](https://img.shields.io/badge/Validation-Group_K--Fold_(Zero_Leakage)-orange.svg?style=flat-square)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square)](LICENSE)
@@ -158,7 +158,7 @@ Pupillary-Response-for-Hearing-Screening/
 │   ├── run_external_dataset_validation.py # Step 12 cross-dataset transfer
 │   ├── run_cv_vs_provided_comparison.py  # Steps 13-14 video ellipse extraction
 │   └── run_ablation_and_statistical_analysis.py # Step 16 significance
-├── manuscript/                        # IEEE TBME LaTeX paper & BibTeX database
+├── manuscript/                        # LaTeX paper, BibTeX & BSPC submission package
 ├── webapp/                            # Interactive Clinical Screening Web Dashboard
 ├── tests/                             # Pytest test suite
 ├── Steps.md                           # 17-step master roadmap
@@ -234,8 +234,8 @@ If you find this work or codebase useful in your research, please cite:
 ```bibtex
 @article{sah2026aepr,
   title={End-to-End Deep Representation Learning and Computer Vision for Objective Hearing Screening via Auditory-Evoked Pupillary Responses},
-  author={Sah, Raju and Research Collaborators},
-  journal={IEEE Transactions on Biomedical Engineering},
+  author={Sah, Raju},
+  journal={Biomedical Signal Processing and Control},
   year={2026},
   note={Under Review}
 }
